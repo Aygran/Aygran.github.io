@@ -3,25 +3,27 @@
   <link rel=¨stylesheet¨ type=¨text/css¨ href=¨main.css¨>
   <script src="main.js"></script>
   
+  <div class="jumbotron text-center">
+    <h1 Alpha Character Sheet</h1>
+    <p>TOL Alpha Character Sheet</p>
+  </div>
+  
   <div class="containter">
     <div class="row">
-      <div class="col-4">
+      <div class="col-sm-4">
         
-        <h5>Player Level
+        <h5>Player Level</h5>
         <input type="number" id="playerLevel" min="1" max="50" value="1" onchange="updateTreePoints()">
-        <br>
-        <h5>Tree Points
+        <br><br>
+        <h5>Tree Points</h5>
         <input type="number" id="treePoints" value="3" onchange="updateTreePoints()">
-        </h5>
-        <br>
-          <h5>Armor Value</h5>
-          <br>
+        <br><br>
           <table>
             <tr>
-          <th>Equiped Armor:</th>
-              <td>
-            <select name="armor" id="equippedArmor" onchange="equipArmor(this);">
-              <option value="naked">Nude</option>
+              <th>Equiped Armor:</th>
+                <td>
+                  <select name="armor" id="equippedArmor" onchange="equipArmor(this);">
+                    <option value="naked">Nude</option>
               <option value="peasentsCloths">Peasent's Cloths</option>
               <option value="necromancerGarb">Necromancer's Garb</option>
               <option value="wizardRobes">Wizard Robes</option>
@@ -490,12 +492,14 @@
           <tr>
             <td>Elemental Bolt</td>
             <td>60ft - 10sq</td>
-            <td>1d20 + <input type="number" id="arcMod" onchange="setSkills();"></td>
-            <td>1d6 + <input type="number" id="arcMod" onchange="setSkills();"></td>
+            <td>1d20 + <input type="number" id="eleBoltHit" onchange="setAbilities();"></td>
+            <td>1d6 + <input type="number" id="eleBoltDam" onchange="setAbilities();"></td>
             <td>No</td>
         </table>
       
     </div>
         
   </div>
+      
+  <div style="width: 100%; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:100%; height:720px" src="https://lucid.app/documents/embedded/bd09b52a-f11d-4f72-8fc7-faa5b9e9de90" id="vODnQSw0IMxc"></iframe></div>
   
