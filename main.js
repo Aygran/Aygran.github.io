@@ -241,7 +241,7 @@ function setSkills() {
 function equipArmor(equippedArmor) {
   var armor = equippedArmor.value;
   
-  if (armor == "naked") {
+  if (armor == "noArmor") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("conMod").value) + 5;
   }
   
@@ -317,6 +317,34 @@ function equipArmor(equippedArmor) {
     document.getElementById("armorValue").value = parseInt(document.getElementById("strMod").value) + 13;
   }
   
+  equipShield(equippedShield);
+  
+}
+
+function equipShield(equippedShield) {
+  var shield = equippedShield.value;
+  
+  if (shield == "noShield") {
+    document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value);
+  }
+  
+  if (shield == "buckler") {
+    document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value) + 2;
+  }
+  
+  if (shield == "parryingBuckler") {
+    document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value) + 2;
+  }
+  
+  if (shield == "heaterShield") {
+    document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value) + 3;
+  }
+  
+  if (shield == "towerShield") {
+    document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value) + 4;
+  }
+  
+  equipArmor(equippedArmor);
 }
 
 function setAbilities() {
@@ -327,12 +355,18 @@ function setAbilities() {
   var strMod = parseInt(document.getElementById("strMod").value);
   var wisMod = parseInt(document.getElementById("wisMod").value);
   
+  var abilityOne = document.getElementById("abilityOne").value
+  
   document.getElementById("eleBoltHit").value = arcMod
   document.getElementById("eleBoltDam").value = arcMod
+  
 }
 
 function playerLevelChange() {
   updateTreePoints();
   updateModifiers();
   setSkills();
+  equipArmor(equippedArmor);
+  equipShield(equippedShield);
+  setAbilities();
 }

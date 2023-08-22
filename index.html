@@ -4,11 +4,11 @@
   <script src="main.js"></script>
   
   <div class="jumbotron text-center">
-    <h1 Alpha Character Sheet</h1>
-    <p>TOL Alpha Character Sheet</p>
+    <h1>Alpha Character Sheet</h1>
+    <p>Tree of Life Tabletop Roleplaying Game</p>
   </div>
   
-  <div class="containter">
+  <div class="containter.fluid">
     <div class="row">
       <div class="col-sm-4">
         
@@ -23,7 +23,7 @@
               <th>Equiped Armor:</th>
                 <td>
                   <select name="armor" id="equippedArmor" onchange="equipArmor(this);">
-                    <option value="naked">Nude</option>
+                    <option value="noArmor">None</option>
               <option value="peasentsCloths">Peasent's Cloths</option>
               <option value="necromancerGarb">Necromancer's Garb</option>
               <option value="wizardRobes">Wizard Robes</option>
@@ -44,15 +44,91 @@
               <option value="knightsFullPlate">Knight's Full Plate</option>
           </select>
               </td>
+            </tr>
+            <tr>
           <th>Equiped Shield:</th>
               <td>
           <select name="shield" id="equippedShield" onchange="equipShield(this);">
-              <option value="none">None</option>
+              <option value="noShield">None</option>
               <option value="buckler">Buckler</option>
               <option value="parryingBuckler">Parrying Buckler</option>
               <option value="heaterShield">Heater Shield</option>
               <option value="towerShield">Tower Shield</option>
           </select>
+              </td>
+            </tr>
+            <tr>
+              <th>Equipped Weapon:</th>
+              <td>
+                <select name="weapon1" id="equippedWeapon1" onchange="equipWeapon1(this)">
+                  <option value="noWep">None</option>
+                  <option value="arcStaff">Arcane Staff</option>
+                  <option value="armingSword">Arming Sword</option>
+                  <option value="bastardSword">Bastard Sword</option>
+                  <option value="blowgun">Blowgun</option>
+                  <option value="cestus">Cestus</option>
+                  <option value="dagger">Dagger</option>
+                  <option value="flintlockPistol">Flintlock Pistol</option>
+                  <option value="flintlockRifle">Flintlock Rifle</option>
+                  <option value="greatAxe">Greataxe</option>
+                  <option value="greatSword">Great Sword</option>
+                  <option value="halbred">Halbred</option>
+                  <option value="handAxe">Hand Axe</option>
+                  <option value="handCrossbow">Hand Crossbow</option>
+                  <option value="heavyCrossbow">Heavy Crossbow</option>
+                  <option value="javelin">Javelin</option>
+                  <option value="katana">Katana</option>
+                  <option value="lightCrossbow">Light Crossbow</option>
+                  <option value="longBow">Long Bow</option>
+                  <option value="longSword">Long Sword</option>
+                  <option value="mace">Mace</option>
+                  <option value="maul">Maul</option>
+                  <option value="pike">Pike</option>
+                  <option value="quarterstaff">Quarterstaff</option>
+                  <option value="rapier">Rapier</option>
+                  <option value="recurveBow">Recurve Bow</option>
+                  <option value="scepter">Scepter</option>
+                  <option value="scimitar">Scimitar</option>
+                  <option value="scythe">Scythe</option>
+                  <option value="shortBow">Short Bow</option>
+                  <option value="shortSword">Short Sword</option>
+                  <option value="spear">Spear</option>
+                  <option value="throwingAxes">Throwing Axes</option>
+                  <option value="throwingKnives">Throwing Knives</option>
+                  <option value="throwingStars">Throwing Stars</option>
+                  <option value="wand">Wand</option>
+                  <option value="warhammer">Warhammer</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>Off-Hand Weapon:</th>
+              <td>
+                <select name="weapon2" id="equippedWeapon2" onchange="equipWeapon2(this)">
+                  <option value="noWep">None</option>
+                  <option value="armingSword">Arming Sword</option>
+                  <option value="blowgun">Blowgun</option>
+                  <option value="cestus">Cestus</option>
+                  <option value="dagger">Dagger</option>
+                  <option value="flintlockPistol">Flintlock Pistol</option>
+                  <option value="handAxe">Hand Axe</option>
+                  <option value="handCrossbow">Hand Crossbow</option>
+                  <option value="javelin">Javelin</option>
+                  <option value="katana">Katana</option>
+                  <option value="longSword">Long Sword</option>
+                  <option value="mace">Mace</option>
+                  <option value="quarterstaff">Quarterstaff</option>
+                  <option value="rapier">Rapier</option>
+                  <option value="scepter">Scepter</option>
+                  <option value="scimitar">Scimitar</option>
+                  <option value="shortSword">Short Sword</option>
+                  <option value="spear">Spear</option>
+                  <option value="throwingAxes">Throwing Axes</option>
+                  <option value="throwingKnives">Throwing Knives</option>
+                  <option value="throwingStars">Throwing Stars</option>
+                  <option value="wand">Wand</option>
+                  <option value="warhammer">Warhammer</option>
+                </select>
               </td>
             </tr>
           <tr>
@@ -71,7 +147,21 @@
               <input type="number" id="primeSPR" placeholder="0">
             </td>
           </tr>
+            <tr>
+              <td>Mainhand To-Hit:
+                <input type="text" id="mainHandHit" placeholder="1d20 +">
+              </td>
+              <td>Mainhand Damage: <input type="text" id="mainHandDamage" placeholder="0">
+              </td>
+            </tr>
+            <tr>
+              <td>Offhand To-Hit: <input type="text" id="offHandHit" placeholder="1d20 +">
+              </td>
+              <td>OffHand Damage: <input type="text" id="offHandDamage" placeholder="0">
+              </td>
+            </tr>
           </table>
+          <br>
           <br>
           <br>
         
@@ -490,7 +580,7 @@
           </tr>
           
           <tr>
-            <td>Elemental Bolt</td>
+            <td id="elementalBoltBlock" onchange="setAbilities()">Elemental Bolt</td>
             <td>60ft - 10sq</td>
             <td>1d20 + <input type="number" id="eleBoltHit" onchange="setAbilities();"></td>
             <td>1d6 + <input type="number" id="eleBoltDam" onchange="setAbilities();"></td>
@@ -501,5 +591,7 @@
         
   </div>
       
-  <div style="width: 100%; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:100%; height:720px" src="https://lucid.app/documents/embedded/bd09b52a-f11d-4f72-8fc7-faa5b9e9de90" id="vODnQSw0IMxc"></iframe></div>
+ <div style="width: 100%; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:100%; height:720px" src="https://lucid.app/documents/embedded/bd09b52a-f11d-4f72-8fc7-faa5b9e9de90" id="vODnQSw0IMxc"></iframe></div>
+      
+      
   
