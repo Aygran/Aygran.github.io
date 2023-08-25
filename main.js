@@ -26,6 +26,8 @@ function updateModifiers() {
   document.getElementById("wisMod").value = Math.floor((wisScore - 10)/2);
   
   setSkills();
+  equipArmor(equippedArmor);
+  equipShield(equipShield);
   setAbilities();
 }
 
@@ -36,14 +38,9 @@ function updateTreePoints() {
   
   if (playerLevel >= 2) {
     document.getElementById("treePoints").value = Math.floor((playerLevel * 2) + 1); 
-  }
-  
-  else if (playerLevel == 1) {
+  } else if (playerLevel == 1) {
     document.getElementById("treePoints").value = 3;
-  } 
-  
-
-  
+  }  
 }
 
 function setSkills() {
@@ -243,108 +240,67 @@ function equipArmor(equippedArmor) {
   
   if (armor == "noArmor") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("conMod").value) + 5;
-  }
-  
-  if (armor == "peasentsCloths") {
+  } else if (armor == "peasentsCloths") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("dexMod").value) + 7;
-  }
-  
-  if (armor == "necromancerGarb") {
+  } else if (armor == "necromancerGarb") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("chaMod").value) + 7;
-  }
-  
-  if (armor == "wizardRobes") {
+  } else if (armor == "wizardRobes") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("arcMod").value) + 7;
-  }
-  
-  if (armor == "monkVestaments") {
+  } else if (armor == "monkVestaments") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("dexMod").value) + 7;
-  }
-  
-  if (armor == "gambesonArmor") {
+  } else if (armor == "gambesonArmor") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("dexMod").value) + 8;
-  }
-  
-  if (armor == "blackleatherArmor") {
+  } else if (armor == "blackleatherArmor") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("dexMod").value) + 9;
-  }
-  
-  if (armor == "berserkersRaiment") {
+  } else if (armor == "berserkersRaiment") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("strMod").value) + 8;
-  }
-  
-  if (armor == "holyArmaments") {
+  } else if (armor == "holyArmaments") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("wisMod").value) + 8;
-  }
-  
-  if (armor == "bardicAtire") {
+  } else if (armor == "bardicAtire") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("chaMod").value) + 8;
-  }
-  
-  if (armor == "peltsAndFurs") {
+  } else if (armor == "peltsAndFurs") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("wisMod").value) + 8;
-  }
-  
-  if (armor == "sellswordArmor") {
+  } else if (armor == "sellswordArmor") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("conMod").value) + 9;
-  }
-  
-  if (armor == "battlemagePlate") {
+  } else if (armor == "battlemagePlate") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("arcMod").value) + 9;
-  }
-  
-  if (armor == "chainHauberk") {
+  } else if (armor == "chainHauberk") {
     document.getElementById("armorValue").value = 11;
-  }
-  
-  if (armor == "brigandine") {
+  } else if (armor == "brigandine") {
     document.getElementById("armorValue").value = 13;
-  }
-  
-  if (armor == "halfPlateArmor") {
+  } else if (armor == "halfPlateArmor") {
     document.getElementById("armorValue").value = 15;
-  }
-  
-  if (armor == "deathKnightRaiment") {
+  } else if (armor == "deathKnightRaiment") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("arcMod").value) + 13;
-  }
-  
-  if (armor == "paladinsFullArmor") {
+  } else if (armor == "paladinsFullArmor") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("wisMod").value) + 13;
-  }
-  
-  if (armor == "knightsFullPlate") {
+  } else if (armor == "knightsFullPlate") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("strMod").value) + 13;
   }
   
-  equipShield(equippedShield);
+  equipShield(equipShield);
   
 }
 
-function equipShield(equippedShield) {
-  var shield = equippedShield.value;
+function equipShield(equipShield) {
+  var shield = equipShield.value;
   
   if (shield == "noShield") {
-    document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value);
-  }
-  
-  if (shield == "buckler") {
+    equipArmor(equippedArmor);
+  } else if (shield == "buckler") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value) + 2;
-  }
-  
-  if (shield == "parryingBuckler") {
+  } else if (shield == "parryingBuckler") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value) + 2;
-  }
-  
-  if (shield == "heaterShield") {
+  } else if (shield == "heaterShield") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value) + 3;
-  }
-  
-  if (shield == "towerShield") {
+  } else if (shield == "towerShield") {
     document.getElementById("armorValue").value = parseInt(document.getElementById("armorValue").value) + 4;
   }
   
-  equipArmor(equippedArmor);
+}
+
+function equipWeapon1(equipWeapon1) {
+  var weapon1 = equipWeapon1.value;
 }
 
 function setAbilities() {
