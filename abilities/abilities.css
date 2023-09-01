@@ -1,0 +1,38 @@
+body {
+  background-color: #B3B3B3;
+}
+
+table {
+  width: 20rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+#table {
+  border: solid;
+}
+
+#tierType {
+  text-align: center;
+}
+
+#arcSkill {
+  background-color: #70C6E4;
+  color: #000000;
+  text-align: center;
+}
+
+#description {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+#connections {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+#upgrades {
+  background-color: #000000;
+  color: #FFFFFF;
+}
