@@ -22,10 +22,6 @@ li {
             background-color: #111;
         }
 
-body {
-  background-color: #B3B3B3;
-}
-
 table {
   width: 20rem;
   padding: 1rem;
@@ -34,6 +30,7 @@ table {
 
 #table {
   border: solid;
+  background-color: lightgray
 }
 
 #tierType {

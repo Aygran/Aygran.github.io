@@ -27,6 +27,11 @@ li {
   text-align: center;
 }
 
+#topSplashImage {
+    margin: 0;
+    padding: 0;
+}
+
 #navbar {
     margin: 0;
     padding: 0;
