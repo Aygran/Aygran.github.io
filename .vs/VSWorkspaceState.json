@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\abilities",
+    "\\aboutUs",
+    "\\tree"
   ],
+  "SelectedNode": "\\aboutUs\\aboutUs.js",
   "PreviewInSolutionExplorer": false
 }
