@@ -389,7 +389,7 @@
 
             </div>
 
-            <div class="col-4">
+            <div class="col-4" id="abilityContent">
                 <h5>Tree Abilities</h5>
                 <br>
                 <label for="abilityOne">Ability One</label>
@@ -601,29 +601,40 @@
                     </optgroup>
                 </select>
                 <br>
-
-
-                <div id="abilityContainer">
-                    <table id="hiddenTable" class="table">
-                        <tr>
-                            <th>Ability Name</th>
-                            <th>Range</th>
-                            <th>To Hit</th>
-                            <th>Damage</th>
-                            <th>Focus</th>
-                        </tr>
-
-                        <tr>
-                            <td id="elementalBoltBlock" onchange="setAbilities()">Elemental Bolt</td>
-                            <td>60ft - 10sq</td>
-                            <td>1d20 + <input type="number" id="eleBoltHit" onchange="setAbilities();"></td>
-                            <td>1d6 + <input type="number" id="eleBoltDam" onchange="setAbilities();"></td>
-                            <td>No</td>
-                    </table>
-
-                </div>
-
             </div>
+
+            <div id="abilitiesContainer"></div>
+
+            <script>
+                // Function to load and display the ability content
+                function loadAndDisplayAbility(selectedOption) {
+                    const abilityContentContainer = document.getElementById("abilityContent");
+                    fetch(`abilities.html #${selectedOption}`)
+                        .then((response) => response.text())
+                        .then((data) => {
+                            abilityContentContainer.innerHTML = data;
+                        });
+                }
+
+                // Function to handle the change event of any ability selector
+                function handleAbilityChange(event) {
+                    const selectedOption = event.target.value;
+                    if (selectedOption === "none") {
+                        // Clear the content if "none" is selected
+                        const abilityContentContainer = document.getElementById("abilityContent");
+                        abilityContentContainer.innerHTML = "";
+                    } else {
+                        // Load and display the content for the selected option
+                        loadAndDisplayAbility(selectedOption);
+                    }
+                }
+
+                // Add an event listener to all ability selectors with a common class
+                const abilitySelectors = document.querySelectorAll("select[name='Abilities']");
+                abilitySelectors.forEach((selector) => {
+                    selector.addEventListener("change", handleAbilityChange);
+                });
+              </script>
 
             <div id="itchEmbed">
                 <iframe frameborder="0" src="https://itch.io/embed/2202473" width="560" height="315">
