@@ -609,12 +609,24 @@
                 // Function to load and display the ability content
                 function loadAndDisplayAbility(selectedOption) {
                     const abilityContentContainer = document.getElementById("abilityContent");
-                    fetch(`../abilities/abilities.html #${selectedOption}`)
+                    fetch("../abilities/abilities.html")
                         .then((response) => response.text())
                         .then((data) => {
-                            abilityContentContainer.innerHTML = data;
+                            // Create a temporary div element to parse the fetched HTML
+                            const tempDiv = document.createElement("div");
+                            tempDiv.innerHTML = data;
+
+                            // Find the content based on the selected option
+                            const selectedContent = tempDiv.querySelector(`#${selectedOption}`);
+                            
+                            if (selectedContent) {
+                                abilityContentContainer.innerHTML = selectedContent.innerHTML;
+                            } else {
+                                // Clear the content if the selected option is not found
+                                abilityContentContainer.innerHTML = "";
+                            }
                         });
-                }
+}
 
                 // Function to handle the change event of any ability selector
                 function handleAbilityChange(event) {
