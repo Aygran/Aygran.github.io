@@ -603,12 +603,15 @@
                 <br>
             </div>
 
+
+            <div class="col-4" id="abilityContent">
             <div id="abilitiesContainer"></div>
+            </div>
 
             <script>
                 // Function to load and display the ability content
                 function loadAndDisplayAbility(selectedOption) {
-                    const abilityContentContainer = document.getElementById("abilityContent");
+                    const abilitiesContainer = document.getElementById("abilitiesContainer");
                     fetch("../abilities/abilities.html")
                         .then((response) => response.text())
                         .then((data) => {
@@ -620,10 +623,10 @@
                             const selectedContent = tempDiv.querySelector(`#${selectedOption}`);
                             
                             if (selectedContent) {
-                                abilityContentContainer.innerHTML = selectedContent.innerHTML;
+                                abilitiesContainer.innerHTML = selectedContent.innerHTML;
                             } else {
                                 // Clear the content if the selected option is not found
-                                abilityContentContainer.innerHTML = "";
+                                abilitiesContainer.innerHTML = "";
                             }
                         });
 }
