@@ -609,7 +609,7 @@
                 // Function to load and display the ability content
                 function loadAndDisplayAbility(selectedOption) {
                     const abilityContentContainer = document.getElementById("abilityContent");
-                    fetch(`Aygran.github.io/abilities/abilities.html #${selectedOption}`)
+                    fetch(`../abilities/abilities.html #${selectedOption}`)
                         .then((response) => response.text())
                         .then((data) => {
                             abilityContentContainer.innerHTML = data;
