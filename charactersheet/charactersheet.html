@@ -396,7 +396,7 @@
                 <select name="Abilities" id="abilityOne">
                     <option value="none"></option>
                     <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
-                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="elementalBolt">Elemental Bolt</option>
                         <option value="minorBeastShape">Minor Beast Shape</option>
                         <option value="alchemicalVial">Alchemical Vial</option>
                         <option value="hexOfPain">Hex of Pain</option>
@@ -438,7 +438,7 @@
                 <select name="Abilities" id="abilityTwo">
                     <option value="none"></option>
                     <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
-                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="elementalBolt">Elemental Bolt</option>
                         <option value="minorBeastShape">Minor Beast Shape</option>
                         <option value="alchemicalVial">Alchemical Vial</option>
                         <option value="hexOfPain">Hex of Pain</option>
@@ -480,7 +480,7 @@
                 <select name="Abilities" id="abilityThree">
                     <option value="none"></option>
                     <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
-                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="elementalBolt">Elemental Bolt</option>
                         <option value="minorBeastShape">Minor Beast Shape</option>
                         <option value="alchemicalVial">Alchemical Vial</option>
                         <option value="hexOfPain">Hex of Pain</option>
@@ -522,7 +522,7 @@
                 <select name="Abilities" id="abilityFour">
                     <option value="none"></option>
                     <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
-                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="elementalBolt">Elemental Bolt</option>
                         <option value="minorBeastShape">Minor Beast Shape</option>
                         <option value="alchemicalVial">Alchemical Vial</option>
                         <option value="hexOfPain">Hex of Pain</option>
@@ -564,7 +564,7 @@
                 <select name="Abilities" id="abilityFive">
                     <option value="none"></option>
                     <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
-                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="elementalBolt">Elemental Bolt</option>
                         <option value="minorBeastShape">Minor Beast Shape</option>
                         <option value="alchemicalVial">Alchemical Vial</option>
                         <option value="hexOfPain">Hex of Pain</option>
@@ -609,7 +609,7 @@
                 // Function to load and display the ability content
                 function loadAndDisplayAbility(selectedOption) {
                     const abilityContentContainer = document.getElementById("abilityContent");
-                    fetch(`abilities.html #${selectedOption}`)
+                    fetch(`../abilities/abilities.html #${selectedOption}`)
                         .then((response) => response.text())
                         .then((data) => {
                             abilityContentContainer.innerHTML = data;
