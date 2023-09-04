@@ -1,0 +1,640 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Tree of Life | TTRPG</title>
+    <meta name="description" content="Digital charactersheet and player's guide to Tree of Life tabletop roleplaying game." />
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron text-center" id="topSplashImage">
+        <h1>Alpha Character Sheet</h1>
+        <p>Tree of Life Tabletop Roleplaying Game</p>
+    </div>
+
+    <div id="navbar">
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../abilities/abilities.html">Abilities</a></li>
+            <li><a href="../tree/tree.html">Skill Tree</a></li>
+            <li><a href="../aboutUs/aboutUs.html">About Us</a></li>
+            <li><a href="../Equipment/equipment.html">Equipment</a></li>
+            <li><a href="../charactersheet/charactersheet.html">Character Sheet</a></li>
+        </ul>
+    </div>
+
+    <div class="containter.fluid">
+        <div class="row">
+            <div class="col-sm-4">
+
+                <h5>Player Level</h5>
+                <input type="number" id="playerLevel" min="1" max="50" value="1" onchange="updateTreePoints()">
+                <br><br>
+                <h5>Tree Points</h5>
+                <input type="number" id="treePoints" value="3" onchange="updateTreePoints()">
+                <br><br>
+                <table>
+                    <tr>
+                        <th>Equiped Armor:</th>
+                        <td>
+                            <select name="armor" id="equippedArmor" onchange="equipArmor(this);">
+                                <option value="noArmor">None</option>
+                                <option value="peasentsCloths">Peasent's Cloths</option>
+                                <option value="necromancerGarb">Necromancer's Garb</option>
+                                <option value="wizardRobes">Wizard Robes</option>
+                                <option value="monkVestaments">Monk's Vestaments</option>
+                                <option value="gambesonArmor">Gambeson Armor</option>
+                                <option value="blackleatherArmor">Blackleather Armor</option>
+                                <option value="berserkersRaiment">Berserker's Raiment</option>
+                                <option value="holyArmaments">Holy Armaments</option>
+                                <option value="bardicAtire">Bardic Atire</option>
+                                <option value="peltsAndFurs">Pelts and Fur</option>
+                                <option value="sellswordArmor">Sellsword Armor</option>
+                                <option value="battlemagePlate">Battlemage Plate</option>
+                                <option value="chainHauberk">Chain Hauberk</option>
+                                <option value="brigandine">Brigandine</option>
+                                <option value="halfPlateArmor">Half-Plate Armor</option>
+                                <option value="deathKnightRaiment">Death Knight's Raiment</option>
+                                <option value="paladinsFullArmor">Paladin's Full Armor</option>
+                                <option value="knightsFullPlate">Knight's Full Plate</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Equiped Shield:</th>
+                        <td>
+                            <select name="shield" id="equipShield" onchange="equipShield(this);">
+                                <option value="noShield">None</option>
+                                <option value="buckler">Buckler</option>
+                                <option value="parryingBuckler">Parrying Buckler</option>
+                                <option value="heaterShield">Heater Shield</option>
+                                <option value="towerShield">Tower Shield</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Equipped Weapon:</th>
+                        <td>
+                            <select name="weapon1" id="equippedWeapon1" onchange="equipWeapon1(this)">
+                                <option value="noWep">None</option>
+                                <option value="arcStaff">Arcane Staff</option>
+                                <option value="armingSword">Arming Sword</option>
+                                <option value="bastardSword">Bastard Sword</option>
+                                <option value="blowgun">Blowgun</option>
+                                <option value="cestus">Cestus</option>
+                                <option value="dagger">Dagger</option>
+                                <option value="flintlockPistol">Flintlock Pistol</option>
+                                <option value="flintlockRifle">Flintlock Rifle</option>
+                                <option value="greatAxe">Greataxe</option>
+                                <option value="greatSword">Great Sword</option>
+                                <option value="halbred">Halbred</option>
+                                <option value="handAxe">Hand Axe</option>
+                                <option value="handCrossbow">Hand Crossbow</option>
+                                <option value="heavyCrossbow">Heavy Crossbow</option>
+                                <option value="javelin">Javelin</option>
+                                <option value="katana">Katana</option>
+                                <option value="lightCrossbow">Light Crossbow</option>
+                                <option value="longBow">Long Bow</option>
+                                <option value="longSword">Long Sword</option>
+                                <option value="mace">Mace</option>
+                                <option value="maul">Maul</option>
+                                <option value="pike">Pike</option>
+                                <option value="quarterstaff">Quarterstaff</option>
+                                <option value="rapier">Rapier</option>
+                                <option value="recurveBow">Recurve Bow</option>
+                                <option value="scepter">Scepter</option>
+                                <option value="scimitar">Scimitar</option>
+                                <option value="scythe">Scythe</option>
+                                <option value="shortBow">Short Bow</option>
+                                <option value="shortSword">Short Sword</option>
+                                <option value="spear">Spear</option>
+                                <option value="throwingAxes">Throwing Axes</option>
+                                <option value="throwingKnives">Throwing Knives</option>
+                                <option value="throwingStars">Throwing Stars</option>
+                                <option value="wand">Wand</option>
+                                <option value="warhammer">Warhammer</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Off-Hand Weapon:</th>
+                        <td>
+                            <select name="weapon2" id="equippedWeapon2" onchange="equipWeapon2(this)">
+                                <option value="noWep">None</option>
+                                <option value="armingSword">Arming Sword</option>
+                                <option value="blowgun">Blowgun</option>
+                                <option value="cestus">Cestus</option>
+                                <option value="dagger">Dagger</option>
+                                <option value="flintlockPistol">Flintlock Pistol</option>
+                                <option value="handAxe">Hand Axe</option>
+                                <option value="handCrossbow">Hand Crossbow</option>
+                                <option value="javelin">Javelin</option>
+                                <option value="katana">Katana</option>
+                                <option value="longSword">Long Sword</option>
+                                <option value="mace">Mace</option>
+                                <option value="quarterstaff">Quarterstaff</option>
+                                <option value="rapier">Rapier</option>
+                                <option value="scepter">Scepter</option>
+                                <option value="scimitar">Scimitar</option>
+                                <option value="shortSword">Short Sword</option>
+                                <option value="spear">Spear</option>
+                                <option value="throwingAxes">Throwing Axes</option>
+                                <option value="throwingKnives">Throwing Knives</option>
+                                <option value="throwingStars">Throwing Stars</option>
+                                <option value="wand">Wand</option>
+                                <option value="warhammer">Warhammer</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            AV:
+                            <input type="number" id="armorValue" placeholder="0">
+                        </td>
+                        <td>
+                            HP:
+                            <input type="number" id="hitPoints" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Temp HP:
+                            <input type="number" id="tempHitPoints" placeholder="0">
+                        </td>
+                        <td>
+                            Primary SPR:
+                            <input type="number" id="primeSPR" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Mainhand To-Hit:
+                            <input type="text" id="mainHandHit" placeholder="1d20 +">
+                        </td>
+                        <td>
+                            Mainhand Damage: <input type="text" id="mainHandDamage" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Offhand To-Hit: <input type="text" id="offHandHit" placeholder="1d20 +">
+                        </td>
+                        <td>
+                            OffHand Damage: <input type="text" id="offHandDamage" placeholder="0">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <br>
+
+                <table class="table">
+                    <tr>
+                        <th>Ability</th>
+                        <th>Score</th>
+                        <th>Modifier</th>
+                    </tr>
+                    <tr>
+                        <td>Arcana</td>
+                        <td><input type="number" value="10" id="arcScore" onchange="updateModifiers()"></td>
+                        <td><input type="number" value="0" id="arcMod" /></td>
+                    </tr>
+                    <tr>
+                        <td>Charisma</td>
+                        <td><input type="number" value="10" id="chaScore" onchange="updateModifiers()"></td>
+                        <td><input type="number" value="0" id="chaMod" /></td>
+                    </tr>
+                    <tr>
+                        <td>Constitution</td>
+                        <td><input type="number" value="10" id="conScore" onchange="updateModifiers()"></td>
+                        <td><input type="number" value="0" id="conMod" /></td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity</td>
+                        <td><input type="number" value="10" id="dexScore" onchange="updateModifiers()"></td>
+                        <td><input type="number" value="0" id="dexMod" /></td>
+                    </tr>
+                    <tr>
+                        <td>Strength</td>
+                        <td><input type="number" value="10" id="strScore" onchange="updateModifiers()"></td>
+                        <td><input type="number" value="0" id="strMod" /></td>
+                    </tr>
+                    <tr>
+                        <td>Wisdom</td>
+                        <td><input type="number" value="10" id="wisScore" onchange="updateModifiers()"></td>
+                        <td><input type="number" value="0" id="wisMod" /></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-4">
+
+
+                <h2>Skills</h2>
+                <table class="table">
+                    <tr>
+                        <th>Skill</th>
+                        <th>Ability Modifier</th>
+                        <th>K</th>
+                        <th>J</th>
+                        <th>V</th>
+                        <th>M</th>
+                        <th>Score</th>
+                    </tr>
+
+                    <tr>
+                        <td>Athletics:</td>
+                        <td>(STR)</td>
+                        <td><input type="checkbox" id="athlKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="athlJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="athlVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="athlMast" onchange="setSkills()">
+                        <td><input type="number" id="athlScore" value="0">
+                    </tr>
+
+                    <tr>
+                        <td>Crafting:</td>
+                        <td>(WIS)</td>
+                        <td><input type="checkbox" id="crafKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="crafJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="crafVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="crafMast" onchange="setSkills()">
+                        <td><input type="number" id="crafScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Diplomacy:</td>
+                        <td>(CHA)</td>
+                        <td><input type="checkbox" id="diplKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="diplJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="diplVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="diplMast" onchange="setSkills()">
+                        <td><input type="number" id="diplScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Deception:</td>
+                        <td>(CHA)</td>
+                        <td><input type="checkbox" id="deceKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="deceJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="deceVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="deceMast" onchange="setSkills()">
+                        <td><input type="number" id="deceScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Guile:</td>
+                        <td>(DEX)</td>
+                        <td><input type="checkbox" id="guilKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="guilJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="guilVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="guilMast" onchange="setSkills()">
+                        <td><input type="number" id="guilScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Healing:</td>
+                        <td>(WIS)</td>
+                        <td><input type="checkbox" id="healKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="healJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="healVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="healMast" onchange="setSkills()">
+                        <td><input type="number" id="healScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Hunting:</td>
+                        <td>(DEX)</td>
+                        <td><input type="checkbox" id="huntKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="huntJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="huntVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="huntMast" onchange="setSkills()">
+                        <td><input type="number" id="huntScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Intuition:</td>
+                        <td>(WIS)</td>
+                        <td><input type="checkbox" id="intuKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="intuJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="intuVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="intuMast" onchange="setSkills()">
+                        <td><input type="number" id="intuScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Lore:</td>
+                        <td>(ARC)</td>
+                        <td><input type="checkbox" id="loreKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="loreJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="loreVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="loreMast" onchange="setSkills()">
+                        <td><input type="number" id="loreScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Perception:</td>
+                        <td>(WIS)</td>
+                        <td><input type="checkbox" id="percKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="percJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="percVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="percMast" onchange="setSkills()">
+                        <td><input type="number" id="percScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Prowess:</td>
+                        <td>(STR)</td>
+                        <td><input type="checkbox" id="prowKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="prowJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="prowVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="prowMast" onchange="setSkills()">
+                        <td><input type="number" id="prowScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Machinery:</td>
+                        <td>(ARC)</td>
+                        <td><input type="checkbox" id="machKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="machJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="machVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="machMast" onchange="setSkills()">
+                        <td><input type="number" id="machScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Song & Story:</td>
+                        <td>(CHA)</td>
+                        <td><input type="checkbox" id="songKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="songJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="songVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="songMast" onchange="setSkills()">
+                        <td><input type="number" id="songScore"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Stealth:</td>
+                        <td>(DEX)</td>
+                        <td><input type="checkbox" id="steaKnow" onchange="setSkills()">
+                        <td><input type="checkbox" id="steaJour" onchange="setSkills()">
+                        <td><input type="checkbox" id="steaVete" onchange="setSkills()">
+                        <td><input type="checkbox" id="steaMast" onchange="setSkills()">
+                        <td><input type="number" id="steaScore"></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="col-4">
+                <h5>Tree Abilities</h5>
+                <br>
+                <label for="abilityOne">Ability One</label>
+                <select name="Abilities" id="abilityOne">
+                    <option value="none"></option>
+                    <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
+                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="minorBeastShape">Minor Beast Shape</option>
+                        <option value="alchemicalVial">Alchemical Vial</option>
+                        <option value="hexOfPain">Hex of Pain</option>
+                        <option value="ironbark">Ironbark</option>
+                        <option value="forceWeapon">Force Weapon</option>
+                        <option value="sanguinate">Sanguinate</option>
+                    </optgroup>
+                    <optgroup label="Discipline" id="disciplineTree" value="disciplineTree">
+                        <option value="twinFang">Twin Fang</option>
+                        <option value="feintingStrike">Feinting Strike</option>
+                        <option value="steadyShot">Steady Shot</option>
+                        <option value="meoldicDiscourse">Melodic Discourse</option>
+                        <option value="battleBallad">Battle Ballad</option>
+                        <option value="charm">Charm</option>
+                        <option value="animalCompanion">Animal Companion</option>
+                    </optgroup>
+                    <optgroup label="Holy" id="holyTree" value="holyTree">
+                        <option value="righteousFury">Righteous Fury</option>
+                        <option value="pressurePoint">Pressure Point</option>
+                        <option value="healingChant">Healing Chant</option>
+                        <option value="healingHands">Healing Hands</option>
+                        <option value="smite">Smite</option>
+                        <option value="markForEvil">Mark for Evil</option>
+                        <option value="blessing">Blessing</option>
+                    </optgroup>
+                    <optgroup label="Martial" id="martialTree" value="martialTree">
+                        <option value="bolster">Bolster</option>
+                        <option value="taunt">Taunt</option>
+                        <option value="charge">Charge</option>
+                        <option value="shieldBash">Shield Bash</option>
+                        <option value="carefulStrike">Careful Strike</option>
+                        <option value="cleave">Cleave</option>
+                        <option value="bloodBath">Bloodbath</option>
+                    </optgroup>
+                </select>
+                <br>
+
+                <label for="abilityTwo">Ability Two</label>
+                <select name="Abilities" id="abilityTwo">
+                    <option value="none"></option>
+                    <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
+                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="minorBeastShape">Minor Beast Shape</option>
+                        <option value="alchemicalVial">Alchemical Vial</option>
+                        <option value="hexOfPain">Hex of Pain</option>
+                        <option value="ironbark">Ironbark</option>
+                        <option value="forceWeapon">Force Weapon</option>
+                        <option value="sanguinate">Sanguinate</option>
+                    </optgroup>
+                    <optgroup label="Discipline" id="disciplineTree" value="disciplineTree">
+                        <option value="twinFang">Twin Fang</option>
+                        <option value="feintingStrike">Feinting Strike</option>
+                        <option value="steadyShot">Steady Shot</option>
+                        <option value="meoldicDiscourse">Melodic Discourse</option>
+                        <option value="battleBallad">Battle Ballad</option>
+                        <option value="charm">Charm</option>
+                        <option value="animalCompanion">Animal Companion</option>
+                    </optgroup>
+                    <optgroup label="Holy" id="holyTree" value="holyTree">
+                        <option value="righteousFury">Righteous Fury</option>
+                        <option value="pressurePoint">Pressure Point</option>
+                        <option value="healingChant">Healing Chant</option>
+                        <option value="healingHands">Healing Hands</option>
+                        <option value="smite">Smite</option>
+                        <option value="markForEvil">Mark for Evil</option>
+                        <option value="blessing">Blessing</option>
+                    </optgroup>
+                    <optgroup label="Martial" id="martialTree" value="martialTree">
+                        <option value="bolster">Bolster</option>
+                        <option value="taunt">Taunt</option>
+                        <option value="charge">Charge</option>
+                        <option value="shieldBash">Shield Bash</option>
+                        <option value="carefulStrike">Careful Strike</option>
+                        <option value="cleave">Cleave</option>
+                        <option value="bloodBath">Bloodbath</option>
+                    </optgroup>
+                </select>
+                <br>
+
+                <label for="abilityThree">Ability Three</label>
+                <select name="Abilities" id="abilityThree">
+                    <option value="none"></option>
+                    <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
+                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="minorBeastShape">Minor Beast Shape</option>
+                        <option value="alchemicalVial">Alchemical Vial</option>
+                        <option value="hexOfPain">Hex of Pain</option>
+                        <option value="ironbark">Ironbark</option>
+                        <option value="forceWeapon">Force Weapon</option>
+                        <option value="sanguinate">Sanguinate</option>
+                    </optgroup>
+                    <optgroup label="Discipline" id="disciplineTree" value="disciplineTree">
+                        <option value="twinFang">Twin Fang</option>
+                        <option value="feintingStrike">Feinting Strike</option>
+                        <option value="steadyShot">Steady Shot</option>
+                        <option value="meoldicDiscourse">Melodic Discourse</option>
+                        <option value="battleBallad">Battle Ballad</option>
+                        <option value="charm">Charm</option>
+                        <option value="animalCompanion">Animal Companion</option>
+                    </optgroup>
+                    <optgroup label="Holy" id="holyTree" value="holyTree">
+                        <option value="righteousFury">Righteous Fury</option>
+                        <option value="pressurePoint">Pressure Point</option>
+                        <option value="healingChant">Healing Chant</option>
+                        <option value="healingHands">Healing Hands</option>
+                        <option value="smite">Smite</option>
+                        <option value="markForEvil">Mark for Evil</option>
+                        <option value="blessing">Blessing</option>
+                    </optgroup>
+                    <optgroup label="Martial" id="martialTree" value="martialTree">
+                        <option value="bolster">Bolster</option>
+                        <option value="taunt">Taunt</option>
+                        <option value="charge">Charge</option>
+                        <option value="shieldBash">Shield Bash</option>
+                        <option value="carefulStrike">Careful Strike</option>
+                        <option value="cleave">Cleave</option>
+                        <option value="bloodBath">Bloodbath</option>
+                    </optgroup>
+                </select>
+                <br>
+
+                <label for="abilityFour">Ability Four</label>
+                <select name="Abilities" id="abilityFour">
+                    <option value="none"></option>
+                    <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
+                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="minorBeastShape">Minor Beast Shape</option>
+                        <option value="alchemicalVial">Alchemical Vial</option>
+                        <option value="hexOfPain">Hex of Pain</option>
+                        <option value="ironbark">Ironbark</option>
+                        <option value="forceWeapon">Force Weapon</option>
+                        <option value="sanguinate">Sanguinate</option>
+                    </optgroup>
+                    <optgroup label="Discipline" id="disciplineTree" value="disciplineTree">
+                        <option value="twinFang">Twin Fang</option>
+                        <option value="feintingStrike">Feinting Strike</option>
+                        <option value="steadyShot">Steady Shot</option>
+                        <option value="meoldicDiscourse">Melodic Discourse</option>
+                        <option value="battleBallad">Battle Ballad</option>
+                        <option value="charm">Charm</option>
+                        <option value="animalCompanion">Animal Companion</option>
+                    </optgroup>
+                    <optgroup label="Holy" id="holyTree" value="holyTree">
+                        <option value="righteousFury">Righteous Fury</option>
+                        <option value="pressurePoint">Pressure Point</option>
+                        <option value="healingChant">Healing Chant</option>
+                        <option value="healingHands">Healing Hands</option>
+                        <option value="smite">Smite</option>
+                        <option value="markForEvil">Mark for Evil</option>
+                        <option value="blessing">Blessing</option>
+                    </optgroup>
+                    <optgroup label="Martial" id="martialTree" value="martialTree">
+                        <option value="bolster">Bolster</option>
+                        <option value="taunt">Taunt</option>
+                        <option value="charge">Charge</option>
+                        <option value="shieldBash">Shield Bash</option>
+                        <option value="carefulStrike">Careful Strike</option>
+                        <option value="cleave">Cleave</option>
+                        <option value="bloodBath">Bloodbath</option>
+                    </optgroup>
+                </select>
+                <br>
+
+                <label for="abilityFive">Ability Five</label>
+                <select name="Abilities" id="abilityFive">
+                    <option value="none"></option>
+                    <optgroup label="Arcane" id="arcaneTree" value="arcaneTree">
+                        <option value="eleBolt">Elemental Bolt</option>
+                        <option value="minorBeastShape">Minor Beast Shape</option>
+                        <option value="alchemicalVial">Alchemical Vial</option>
+                        <option value="hexOfPain">Hex of Pain</option>
+                        <option value="ironbark">Ironbark</option>
+                        <option value="forceWeapon">Force Weapon</option>
+                        <option value="sanguinate">Sanguinate</option>
+                    </optgroup>
+                    <optgroup label="Discipline" id="disciplineTree" value="disciplineTree">
+                        <option value="twinFang">Twin Fang</option>
+                        <option value="feintingStrike">Feinting Strike</option>
+                        <option value="steadyShot">Steady Shot</option>
+                        <option value="meoldicDiscourse">Melodic Discourse</option>
+                        <option value="battleBallad">Battle Ballad</option>
+                        <option value="charm">Charm</option>
+                        <option value="animalCompanion">Animal Companion</option>
+                    </optgroup>
+                    <optgroup label="Holy" id="holyTree" value="holyTree">
+                        <option value="righteousFury">Righteous Fury</option>
+                        <option value="pressurePoint">Pressure Point</option>
+                        <option value="healingChant">Healing Chant</option>
+                        <option value="healingHands">Healing Hands</option>
+                        <option value="smite">Smite</option>
+                        <option value="markForEvil">Mark for Evil</option>
+                        <option value="blessing">Blessing</option>
+                    </optgroup>
+                    <optgroup label="Martial" id="martialTree" value="martialTree">
+                        <option value="bolster">Bolster</option>
+                        <option value="taunt">Taunt</option>
+                        <option value="charge">Charge</option>
+                        <option value="shieldBash">Shield Bash</option>
+                        <option value="carefulStrike">Careful Strike</option>
+                        <option value="cleave">Cleave</option>
+                        <option value="bloodBath">Bloodbath</option>
+                    </optgroup>
+                </select>
+                <br>
+
+
+                <div id="abilityContainer">
+                    <table id="hiddenTable" class="table">
+                        <tr>
+                            <th>Ability Name</th>
+                            <th>Range</th>
+                            <th>To Hit</th>
+                            <th>Damage</th>
+                            <th>Focus</th>
+                        </tr>
+
+                        <tr>
+                            <td id="elementalBoltBlock" onchange="setAbilities()">Elemental Bolt</td>
+                            <td>60ft - 10sq</td>
+                            <td>1d20 + <input type="number" id="eleBoltHit" onchange="setAbilities();"></td>
+                            <td>1d6 + <input type="number" id="eleBoltDam" onchange="setAbilities();"></td>
+                            <td>No</td>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div id="itchEmbed">
+                <iframe frameborder="0" src="https://itch.io/embed/2202473" width="560" height="315">
+                    <a href="https://tolttrpg.itch.io/tree-of-life-tabletop-role-playing-game">Tree of Life - Tabletop Role-playing Game by TOLTTRPG</a>
+                </iframe>
+            </div>
+
+            <div id="youtubeEmbed">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FiSyqtdbNtE?si=Ts5NkTn5d8f9otd5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
