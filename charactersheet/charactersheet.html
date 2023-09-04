@@ -611,7 +611,6 @@
             <script>
                 // Function to load and display the ability content
                 function loadAndDisplayAbility(selectedOption) {
-                    const abilitiesContainer = document.getElementById("abilitiesContainer");
                     fetch("../abilities/abilities.html")
                         .then((response) => response.text())
                         .then((data) => {
@@ -621,23 +620,26 @@
 
                             // Find the content based on the selected option
                             const selectedContent = tempDiv.querySelector(`#${selectedOption}`);
-                            
+
                             if (selectedContent) {
-                                abilitiesContainer.innerHTML = selectedContent.innerHTML;
-                            } else {
-                                // Clear the content if the selected option is not found
-                                abilitiesContainer.innerHTML = "";
+                                // Create a new div for the selected ability
+                                const abilityDiv = document.createElement("div");
+                                abilityDiv.innerHTML = selectedContent.innerHTML;
+                                
+                                // Append the abilityDiv to the abilitiesContainer
+                                const abilitiesContainer = document.getElementById("abilitiesContainer");
+                                abilitiesContainer.appendChild(abilityDiv);
                             }
                         });
-}
+                }
 
                 // Function to handle the change event of any ability selector
                 function handleAbilityChange(event) {
                     const selectedOption = event.target.value;
                     if (selectedOption === "none") {
                         // Clear the content if "none" is selected
-                        const abilityContentContainer = document.getElementById("abilityContent");
-                        abilityContentContainer.innerHTML = "";
+                        const abilitiesContainer = document.getElementById("abilitiesContainer");
+                        abilitiesContainer.innerHTML = "";
                     } else {
                         // Load and display the content for the selected option
                         loadAndDisplayAbility(selectedOption);
