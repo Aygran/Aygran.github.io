@@ -3,8 +3,9 @@
     "",
     "\\abilities",
     "\\aboutUs",
-    "\\tree"
+    "\\charactersheet",
+    "\\Equipment"
   ],
-  "SelectedNode": "\\aboutUs\\aboutUs.js",
+  "SelectedNode": "\\charactersheet\\charactersheet.html",
   "PreviewInSolutionExplorer": false
 }
