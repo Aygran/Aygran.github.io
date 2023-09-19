@@ -1,140 +1,140 @@
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
 li {
-  float: right;
+    float: right;
 }
 
-  li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-  }
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
-      li a:hover {
-          background-color: #111;
-      }
+        li a:hover {
+            background-color: #111;
+        }
 
 #topSplashImage {
-  margin: 0;
-  padding: 2rem;
-  background-image: url("https://Aygran.github.io/imgs/Sword%20in%20the%20Tree.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: #cccccc;
-  color: white;
+    margin: 0;
+    padding: 2rem;
+    background-image: url("https://Aygran.github.io/imgs/Sword%20in%20the%20Tree.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #cccccc;
+    color: white;
 }
 
 #navbar {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #treeControls {
-text-align: center;
-padding: 1rem;
-margin: 1rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@200;400;700&display=swap');
 
 body {
-background-image: url("https://Aygran.github.io/imgs/275d5edba997831e.jpeg");
-background-position: center;
-background-size: cover;
-background-color: #131316;
-color: #ffffff;
-font-family: 'Lora', sans-serif;
-padding: 0;
-margin: 0;
+  background-image: url("https://Aygran.github.io/imgs/275d5edba997831e.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-color: #131316;
+  color: #ffffff;
+  font-family: 'Lora', sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 section {
-display: grid;
-place-items: center;
-align-content: center;
-min-height: 100vh;
-padding: 1rem;
-margin: 5rem;
-height: 7rem;
-background-color: rgba(0, 0, 0, 0.65);
-border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  margin: 5rem;
+  height: 7rem;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 1rem;
 }
 
 .hidden {
-opacity: 0;
-transition: all 1s;
+  opacity: 0;
+  transition: all 1s;
 }
 
 .show {
-opacity: 1;
+  opacity: 1;
 }
 
 @media(prefers-reduced-motion) {
-.hidden {
-  transition: none;
-}
+  .hidden {
+    transition: none;
+  }
 }
 
 #tolFullLogo {
-max-width: 35%;
-height: auto;
-margin-right: 5rem;
-border-radius: 25rem;
-margin-left: 5rem;
+  max-width: 35%;
+  height: auto;
+  margin-right: 5rem;
+  border-radius: 25rem;
+  margin-left: 5rem;
 }
 
 #tolDwarf {
-max-width: 45%;
-height: auto;
-margin-left: 20rem;
+  max-width: 45%;
+  height: auto;
+  margin-left: 20rem;
 }
 
 #itchEmbed {
-max-width: 100%;
-height: auto;
-margin-right: 5rem;
-margin-left: 5rem;
+  max-width: 100%;
+  height: auto;
+  margin-right: 5rem;
+  margin-left: 5rem;
 }
 
 .container1 {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .content1 {
-flex: 1;
-text-align: center;
-margin-right: 10rem;
+  flex: 1;
+  text-align: center;
+  margin-right: 10rem;
 }
 
 .container2 {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .content2 {
-flex: 1;
-text-align: center;
-margin-left: 10rem;
+  flex: 1;
+  text-align: center;
+  margin-left: 10rem;
 }
 
 .container3 {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .content3 {
-flex: 1;
-text-align: center;
-margin-left: auto;
-margin-right: auto;
+  flex: 1;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
