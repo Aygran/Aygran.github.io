@@ -26,134 +26,170 @@
         </ul>
     </div>
 
-    <div class="container" id="skills">
-        <div class="row">
-          <div class="col-md-4" id="arcIncrease1">
-            <table id="table">
-              <tr>
-                <th id="arcSkill"><h3>Arcane Increase</h3></th>
-              </tr>
-              <tr>
-                <td id="tierType">Tier 1 - Passive Ability</td>
-              </tr>
-              <tr>
-                <th id="description">Description</th>
-              </tr>
-              <tr>
-                <td>Gain a <b>+1</b> to your <b>Arcane</b> Score</td>
-              </tr>
-              <tr>
-                <th id="connections">Connections</th>
-              </tr>
-              <tr>
-                <td>Alchemical Mixture, Elemental Bolt, Force Weapon.</td>
-              </tr>
-            </table>
-          </div>
-          
-           <div class="col-md-4" id="wisIncrease1">
-            <table id="table">
-              <tr>
-                <th id="arcSkill"><h3>Wisdom Increase</h3></th>
-              </tr>
-              <tr>
-                <td id="tierType">Tier 1 - Passive Ability</td>
-              </tr>
-              <tr>
-                <th id="description">Description</th>
-              </tr>
-              <tr>
-                <td>Gain a <b>+1</b> to your <b>Wisdom</b> Score</td>
-              </tr>
-              <tr>
-                <th id="connections">Connections</th>
-              </tr>
-              <tr>
-                <td>Ironbark, Minor Beast Shape, Alchemical Mixture.</td>
-              </tr>
-            </table>
-          </div>
-          
-          <div class="col-md-4" id="chaIncrease1">
-            <table id="table">
-              <tr>
-                <th id="arcSkill"><h3>Charisma Increase</h3></th>
-              </tr>
-              <tr>
-                <td id="tierType">Tier 1 - Passive Ability</td>
-              </tr>
-              <tr>
-                <th id="description">Description</th>
-              </tr>
-              <tr>
-                <td>Gain a <b>+1</b> to your <b>Charisma</b> Score</td>
-              </tr>
-              <tr>
-                <th id="connections">Connections</th>
-              </tr>
-              <tr>
-                <td>Force Weapon, Hex of Pain, Sanguinate.</td>
-              </tr>
-            </table>
-          </div>
-          
-          <div class="col-md-4" id="elementalBolt">
-            <table id="table">
-              <tr>
-                <th id="arcSkill"><h3>Elemental Bolt</h3></th>
-              </tr>
-              <tr>
-                <td id="tierType">Tier 1 - Active Ability</td>
-              </tr>
-              <tr>
-                <td><b>Cost:</b> 2 Action Points</td>
-              </tr>
-              <tr>
-                <td><b>Range:</b> 60-Feet (12 Sq)</td>
-              </tr>
-              <tr>
-                <td><b>To-Hit:</b> 1d20 + ARC</td>
-              </tr>
-              <tr>
-                <td><b>Damage:</b> 1d6 + ARC</td>
-              </tr>
-              <tr>
-                <th id="description">Description</th>
-              </tr>
-              <tr>
-                <td>Fire a bolt of elemental energy of your choice at a target. (Fire, Ice, Lightning)</td>
-              </tr>
-              <tr>
-                <th id="upgrades"> Upgrades </th>
-              </tr>
-              <tr>
-                <th>Charged Power</th>
-              </tr>
-              <tr>
-                <td>You can choose to spend 3 Action Points to have it deal 1d10 + ARC damage instead.</td>
-              </tr>
-              <tr>
-                <th>Arcing Bolt</th>
-              </tr>
-              <tr>
-                <td>When firing <b>Elemental Bolt</b>, you may now choose an additional target within 10 feet of the original. The additional target takes damage equal to your ARC modifier.</td>
-              </tr>
-              <tr>
-                <th id="connections">Connections</th>
-              </tr>
-              <tr>
-                <td>RP Feat -> Magic Restoration</td>
-              </tr>
-              <tr>
-                <td>RP Feat -> Control Elements</td>
-              </tr>
-              <tr>
-                <td>RP Feat -> Telekenisis</td>
-              </tr>
-            </table>
-          </div>
-          
-        </div>
+    <button class="tablink" onclick="openPage('arcaneTab', this, '#70C6E4')">Arcane</button>
+<button class="tablink" onclick="openPage('disciplineTab', this, 'green')" id="defaultOpen">Discipline</button>
+<button class="tablink" onclick="openPage('holyTab', this, 'yellow')">Holy</button>
+<button class="tablink" onclick="openPage('martialTab', this, 'red')">Martial</button>
+
+<div id="arcaneTab" class="tabcontent">
+  <div class="container" id="skill">
+    <div class="row">
+      <div class="col-*">
+        <table id="table">
+          <tr>
+            <th id="arcSkill"><h3>Arcane Increase</h3></th>
+          </tr>
+          <tr>
+            <td id="tierType">Tier 1 - Passive Ability</td>
+          </tr>
+          <tr>
+            <th id="description">Description</th>
+          </tr>
+          <tr>
+            <td>Gain a <b>+1</b> to your <b>Arcane</b> Score</td>
+          </tr>
+        </table>
       </div>
+      
+       <div class="col-*">
+        <table id="table">
+          <tr>
+            <th id="arcSkill"><h3>Wisdom Increase</h3></th>
+          </tr>
+          <tr>
+            <td id="tierType">Tier 1 - Passive Ability</td>
+          </tr>
+          <tr>
+            <th id="description">Description</th>
+          </tr>
+          <tr>
+            <td>Gain a <b>+1</b> to your <b>Wisdom</b> Score</td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="col-*">
+        <table id="table">
+          <tr>
+            <th id="arcSkill"><h3>Charisma Increase</h3></th>
+          </tr>
+          <tr>
+            <td id="tierType">Tier 1 - Passive Ability</td>
+          </tr>
+          <tr>
+            <th id="description">Description</th>
+          </tr>
+          <tr>
+            <td>Gain a <b>+1</b> to your <b>Charisma</b> Score</td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="col-*">
+        <table id="table">
+          <tr>
+            <th id="arcSkill"><h3>Elemental Bolt</h3></th>
+          </tr>
+          <tr>
+            <td id="tierType">Tier 1 - Active Ability</td>
+          </tr>
+          <tr>
+            <td><b>Cost:</b> 2 Action Points</td>
+          </tr>
+          <tr>
+            <td><b>Range:</b> 60-Feet (12 Sq)</td>
+          </tr>
+          <tr>
+            <td><b>To-Hit:</b> 1d20 + ARC</td>
+          </tr>
+          <tr>
+            <td><b>Damage:</b> 1d6 + ARC</td>
+          </tr>
+          <tr>
+            <th id="description">Description</th>
+          </tr>
+          <tr>
+            <td>Fire a bolt of elemental energy of your choice at a target. (Fire, Ice, Lightning)</td>
+          </tr>
+          <tr>
+            <th id="upgrades"> Upgrades </th>
+          </tr>
+          <tr>
+            <th>Charged Power</th>
+          </tr>
+          <tr>
+            <td>You can choose to spend 3 Action Points to have it deal 1d10 + ARC damage instead.</td>
+          </tr>
+          <tr>
+            <th>Arcing Bolt</th>
+          </tr>
+          <tr>
+            <td>When firing <b>Elemental Bolt</b>, you may now choose an additional target within 10 feet of the original. The additional target takes damage equal to your ARC modifier.</td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="col-*">
+        <table id="table">
+          <tr>
+            <th id="arcSkill"><h3>Elemental Bolt</h3></th>
+          </tr>
+          <tr>
+            <td id="tierType">Tier 1 - Active Ability</td>
+          </tr>
+          <tr>
+            <td><b>Cost:</b> 2 Action Points</td>
+          </tr>
+          <tr>
+            <td><b>Range:</b> 60-Feet (12 Sq)</td>
+          </tr>
+          <tr>
+            <td><b>To-Hit:</b> 1d20 + ARC</td>
+          </tr>
+          <tr>
+            <td><b>Damage:</b> 1d6 + ARC</td>
+          </tr>
+          <tr>
+            <th id="description">Description</th>
+          </tr>
+          <tr>
+            <td>Fire a bolt of elemental energy of your choice at a target. (Fire, Ice, Lightning)</td>
+          </tr>
+          <tr>
+            <th id="upgrades"> Upgrades </th>
+          </tr>
+          <tr>
+            <th>Charged Power</th>
+          </tr>
+          <tr>
+            <td>You can choose to spend 3 Action Points to have it deal 1d10 + ARC damage instead.</td>
+          </tr>
+          <tr>
+            <th>Arcing Bolt</th>
+          </tr>
+          <tr>
+            <td>When firing <b>Elemental Bolt</b>, you may now choose an additional target within 10 feet of the original. The additional target takes damage equal to your ARC modifier.</td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div id="disciplineTab" class="tabcontent">
+  <h3>News</h3>
+  <p>Some news this fine day!</p>
+</div>
+
+<div id="holyTab" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="martialTab" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>
 </body>
 </html>
